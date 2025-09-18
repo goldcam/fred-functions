@@ -1,10 +1,9 @@
-const fartSound = new Audio('../sounds/fartSound.mp3');
 
-const createFartFunction = (fartSound) => (hasGas) => {
-    if(hasGas === true) fartSound.play();        
+const createFartFunction = () => (hasGas) => {
+    if(hasGas === true) console.log('Fart!');        
 };
 
-const fartFunction = createFartFunction(fartSound);
+const fartFunction = createFartFunction();
 
 const createTriggerFart = (fartFunction) => (input) => {
     if(input === 'push' || input === 'pull') fartFunction(true);
@@ -13,3 +12,4 @@ const createTriggerFart = (fartFunction) => (input) => {
 const triggerFart = createTriggerFart(fartFunction); 
 
 triggerFart('pull');
+triggerFart('push');
